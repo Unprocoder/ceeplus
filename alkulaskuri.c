@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+//Aliohjelma luvun tarkistamiseksi
 int tarkistaja(int luku){
     int i = 2;
     while (i < luku){
@@ -14,12 +15,30 @@ int tarkistaja(int luku){
         printf("Luku %d on alkuluku!", luku);
     }
 }
+int laskuri(int luku){
+    int i = 2;
+    int x = 2;
+    
+    
+}
+
+
 
 int main(void){
     int luku;
+    char input[100];
 
     printf("Anna luku: ");
-    scanf("%d", &luku);
+
+    // Syötteen tarkistaminen, ei hyväkysy muuta kuin numeroita
+    while(fgets(input, sizeof(input), stdin)){
+        if (sscanf(input, "%d", &luku) == 1){
+            break;
+        }
+        else{
+            printf("Invaliidi inputti. Anna luku!\n");
+        }
+    }
 
     tarkistaja(luku);
 }
