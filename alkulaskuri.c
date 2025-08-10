@@ -6,23 +6,41 @@ int tarkistaja(int luku){
     while (i < luku){
         if (luku % i == 0){
             printf("Luku %d ei ole alkuluku!", luku);
-            break;
+            return 0;
         } else{
             i++;
         }
     }
-    if (i == luku){
-        printf("Luku %d on alkuluku!", luku);
+    printf("Luku %d on alkuluku!", luku);
+}
+
+// While luupin kokeilua
+int loopperi(int luku){
+    int i = 1;
+    int x = 1;
+    
+    while (x <= luku){
+        printf("%d: ", x);
+        while (i <= luku){
+            printf("%d ", i);
+            i++;
+        }
+        printf("\n");
+        i = 1;
+        x++;
     }
 }
-int laskuri(int luku){
-    int i = 2;
-    int x = 2;
-    
-    
+
+int megalaskuri(int n){
+    if (n <= 1) return 0;
+
+    for (int i = 2; i*i <= n; i++){
+        if (n % i == 0){
+            return 0;
+        }
+    }
+    return 1;
 }
-
-
 
 int main(void){
     int luku;
@@ -40,5 +58,9 @@ int main(void){
         }
     }
 
-    tarkistaja(luku);
+    for (int i = 2; i <= luku; i++) {
+    if (megalaskuri(i)) {
+        printf("%d\n", i);
+    }
+    }
 }
