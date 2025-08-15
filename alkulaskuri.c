@@ -48,7 +48,7 @@ int main(void){
 
     printf("Anna luku: ");
 
-    // Syötteen tarkistaminen, ei hyväkysy muuta kuin numeroita
+    // Syötteen tarkistaminen, ei hyväkysy muuta kuin numeroita, melkein ;)
     while(fgets(input, sizeof(input), stdin)){
         if (sscanf(input, "%d", &luku) == 1){
             break;
